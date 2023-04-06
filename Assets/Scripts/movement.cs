@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.AI;
 
 public class movement : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class movement : MonoBehaviour
     public TextMeshProUGUI fun_text;
     public TextMeshProUGUI hygiene_text;
 
-    private Animator animator;
+    public GameObject target;
+    public NavMeshAgent agent;
+    public Animator animator;
+    public float idleDistance = 1f;
 
     public RuntimeAnimatorController test;
     public RuntimeAnimatorController orc;
@@ -33,6 +37,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         
     }
 
@@ -40,26 +45,26 @@ public class movement : MonoBehaviour
     void Update()
     {
         Loss();
-        Hud();
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Your Hunger level is " + hunger);
-            Debug.Log("Your Sleep level is " + sleep);
-            Debug.Log("Your Money level is " + money);
-            Debug.Log("Your Fun level is " + fun);
-            Debug.Log("Your Hygiene level is " + hygiene);
-            
-        }
-
+       // Hud();
+        MinMax();
+       
         if (hunger < 70f)
         {
-            Invoke("HungerAdd",20f);
-            animator.runtimeAnimatorController = test as RuntimeAnimatorController;
+            agent.SetDestination(target.transform.position);
+            //Invoke("HungerAdd",20f);
+            if (Vector3.Distance(transform.position, target.transform.position) > idleDistance)
+            {
+                animator.runtimeAnimatorController = test as RuntimeAnimatorController;//walk to object
+            }
+            else
+            {
+                animator.runtimeAnimatorController = orc as RuntimeAnimatorController;//animation that will add Hunger
+                Invoke("HungerAdd",20f);
+            }
         }
         else if (hunger > 70f)
         {
-            animator.runtimeAnimatorController = orc as RuntimeAnimatorController;
+            animator.runtimeAnimatorController = orc as RuntimeAnimatorController; // back to idle
         }
         
     }
@@ -85,6 +90,15 @@ public class movement : MonoBehaviour
     void HungerAdd()
     {
         hunger = 100f;
+    }
+
+    void MinMax()
+    {
+        hunger = Mathf.Clamp(hunger, 0, 100);
+        sleep = Mathf.Clamp(sleep, 0, 100);
+        money = Mathf.Clamp(money, 0, 100);
+        fun = Mathf.Clamp(fun, 0, 100);
+        hygiene = Mathf.Clamp(hygiene, 0, 100);
     }
     
     
