@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24038
+  m_Name: pb_Mesh26128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23880
+  m_Name: pb_Mesh25958
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1009,30 +1009,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3fbf2cd7a109942ac65ad495e74cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hungerLoss: 0.5
-  sleepLoss: 0.5
-  moneyLoss: 0.5
-  funLoss: 0.5
-  hygieneLoss: 0.5
   hunger: 100
   sleep: 100
-  money: 100
   fun: 100
   hygiene: 100
-  hunger_text: {fileID: 0}
-  sleep_text: {fileID: 0}
-  money_text: {fileID: 0}
-  fun_text: {fileID: 0}
-  hygiene_text: {fileID: 0}
-  target: {fileID: 0}
+  hungerLoss: 0.5
+  sleepLoss: 0.5
+  funLoss: 0.5
+  hygieneLoss: 0.5
+  hunger_Text_Hud: {fileID: 0}
+  sleep_Text_Hud: {fileID: 0}
+  fun_Text_Hud: {fileID: 0}
+  hygiene_Text_Hud: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
   idleDistance: 1
   tarIdle: {fileID: 0}
-  test: {fileID: 0}
-  orc: {fileID: 0}
+  tarHunger: {fileID: 0}
+  tarSleep: {fileID: 0}
+  tarFun: {fileID: 0}
+  tarHygiene: {fileID: 0}
   walking: {fileID: 0}
   animIdle: {fileID: 0}
+  animHunger: {fileID: 0}
+  animSleep: {fileID: 0}
+  animFun: {fileID: 0}
+  animHygiene: {fileID: 0}
 --- !u!65 &331115965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1278,7 +1280,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23810
+  m_Name: pb_Mesh25870
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2961,7 +2963,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23946
+  m_Name: pb_Mesh26028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4019,7 +4021,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24070
+  m_Name: pb_Mesh26166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4459,7 +4461,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23928
+  m_Name: pb_Mesh26006
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6079,7 +6081,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64002
+  m_Name: pb_Mesh25928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6321,7 +6323,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23896
+  m_Name: pb_Mesh25974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7216,7 +7218,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24000
+  m_Name: pb_Mesh26086
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7380,7 +7382,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24014
+  m_Name: pb_Mesh26104
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10540,7 +10542,7 @@ Animator:
   m_GameObject: {fileID: 649662329691269392}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe4db88fe07892e41ae944f8add6b8ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10576,30 +10578,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3fbf2cd7a109942ac65ad495e74cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hungerLoss: 0.5
-  sleepLoss: 0.5
-  moneyLoss: 0.5
-  funLoss: 0.5
-  hygieneLoss: 0.5
   hunger: 100
   sleep: 100
-  money: 100
   fun: 100
   hygiene: 100
-  hunger_text: {fileID: 0}
-  sleep_text: {fileID: 0}
-  money_text: {fileID: 0}
-  fun_text: {fileID: 0}
-  hygiene_text: {fileID: 0}
-  target: {fileID: 331115962}
+  hungerLoss: 0.5
+  sleepLoss: 0.5
+  funLoss: 0.5
+  hygieneLoss: 0.5
+  hunger_Text_Hud: {fileID: 0}
+  sleep_Text_Hud: {fileID: 0}
+  fun_Text_Hud: {fileID: 0}
+  hygiene_Text_Hud: {fileID: 0}
   agent: {fileID: 649662329691269397}
   animator: {fileID: 0}
   idleDistance: 1
   tarIdle: {fileID: 0}
-  test: {fileID: 9100000, guid: ae930949a8f1dae40bff01da9ce779c0, type: 2}
-  orc: {fileID: 0}
+  tarHunger: {fileID: 0}
+  tarSleep: {fileID: 0}
+  tarFun: {fileID: 0}
+  tarHygiene: {fileID: 0}
   walking: {fileID: 0}
   animIdle: {fileID: 0}
+  animHunger: {fileID: 0}
+  animSleep: {fileID: 0}
+  animFun: {fileID: 0}
+  animHygiene: {fileID: 0}
 --- !u!23 &649662329691269396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24208,9 +24212,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214532700405594555}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.70710677, y: -0.000000117711636, z: -0.000000117711636, w: 0.70710677}
+  m_LocalPosition: {x: -0.0000038146966, y: 0, z: -0.0000014305131}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1057937345827757193}
