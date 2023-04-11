@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine.AI;
 
 public class movement : MonoBehaviour
-{
+{[Header("Stats")]
     public float hunger = 100f;
     public float sleep = 100f;
     public float fun = 100f;
@@ -27,29 +27,33 @@ public class movement : MonoBehaviour
     private float funLossDefault = 0.2f;
     private float energyLossDefault = 0.5f;
     private float hygieneLossDefault = 0.5f;
+
+    [SerializeField] private float minHunger = 70f;
+    [SerializeField] private float minSleep = 70f;
+    [SerializeField] private float minFun = 70f;
+    [SerializeField] private float minHygiene = 70f;
+    
+    [Header("HUD")]
     
     public TextMeshProUGUI hunger_Text_Hud;
     public TextMeshProUGUI sleep_Text_Hud;
     public TextMeshProUGUI fun_Text_Hud;
     public TextMeshProUGUI hygiene_Text_Hud;
-
-    public TextMeshProUGUI hunger_text;
-    public TextMeshProUGUI sleep_text;
-    public TextMeshProUGUI fun_text;
-    public TextMeshProUGUI hygiene_text;
-    public TextMeshProUGUI money_text;
-
-    public GameObject target;
-    public NavMeshAgent agent;
-    public Animator animator;
-    public float idleDistance = 1f;
-
+    
+    [Header("Targets")]
+    
     public GameObject tarIdle;
     public GameObject tarHunger;
     public GameObject tarSleep;
     public GameObject tarFun;
     public GameObject tarHygiene;
+    public float idleDistance = 1f;
     
+    [Header("Animator Controllers")]
+    
+    public NavMeshAgent agent;
+    public Animator animator;
+
     public RuntimeAnimatorController walking;
     public RuntimeAnimatorController animIdle;
     public RuntimeAnimatorController animHunger;
@@ -72,22 +76,22 @@ public class movement : MonoBehaviour
         Hud();
         MinMax();
 
-        if (hunger < 70f)
+        if (hunger < minHunger)
         {
             HungerAnim();
         }
 
-        if (sleep < 70f)
+        if (sleep < minSleep)
         {
             SleepAnim();
         }
 
-        if (fun < 70f)
+        if (fun < minFun)
         {
             FunAnim();
         }
 
-        if (hygiene < 70f)
+        if (hygiene < minHygiene)
         {
             HygieneAnim();
         }
