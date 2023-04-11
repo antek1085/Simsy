@@ -26,6 +26,7 @@ public class movement : MonoBehaviour
     private float hungerLossDefault = 0.4f;
     private float funLossDefault = 0.2f;
     private float energyLossDefault = 0.5f;
+<<<<<<< Updated upstream
     private float hygieneLossDefault = 0.5f;
     
     public TextMeshProUGUI hunger_Text_Hud;
@@ -33,6 +34,22 @@ public class movement : MonoBehaviour
     public TextMeshProUGUI fun_Text_Hud;
     public TextMeshProUGUI hygiene_Text_Hud;
     
+=======
+
+    public float hunger = 100f;
+    public float sleep = 100f;
+    public float money = 100f;
+    public float fun = 100f;
+    public float hygiene = 100f;
+
+    public TextMeshProUGUI hunger_text;
+    public TextMeshProUGUI sleep_text;
+    public TextMeshProUGUI fun_text;
+    public TextMeshProUGUI hygiene_text;
+    public TextMeshProUGUI money_text;
+
+    public GameObject target;
+>>>>>>> Stashed changes
     public NavMeshAgent agent;
     public Animator animator;
     public float idleDistance = 1f;
@@ -69,6 +86,7 @@ public class movement : MonoBehaviour
         {
             HungerAnim();
         }
+<<<<<<< Updated upstream
 
         if (sleep < 70f)
         {
@@ -86,6 +104,9 @@ public class movement : MonoBehaviour
         }
         
 
+=======
+        
+>>>>>>> Stashed changes
     }
 
     void Loss()
