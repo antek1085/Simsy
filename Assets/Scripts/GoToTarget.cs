@@ -9,6 +9,7 @@ public class GoToTarget : MonoBehaviour
     public NavMeshAgent agent;
     public Animator animator;
     public float idleDistance = 1f;
+    public movement movescript;
 
     private void Start()
     {

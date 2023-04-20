@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-1100376767258298184
+--- !u!1102 &-843411186740395655
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gaming
+  m_Name: Salsa Dancing 0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e59ebb3e300fc3049a7b2697eed70985, type: 2}
+  m_Motion: {fileID: 7400000, guid: 94bdb6cf98c2adc4997fdd2804558f1b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -58,11 +58,11 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -1100376767258298184}
-    m_Position: {x: 400, y: 160, z: 0}
+    m_State: {fileID: 9062490279921442953}
+    m_Position: {x: 220, y: 150, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 8699870883113751347}
-    m_Position: {x: 160, y: 160, z: 0}
+    m_State: {fileID: -843411186740395655}
+    m_Position: {x: 160, y: 200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -72,41 +72,18 @@ AnimatorStateMachine:
   m_EntryPosition: {x: -40, y: 160, z: 0}
   m_ExitPosition: {x: 230, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 8699870883113751347}
---- !u!1101 &6194944041003473491
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -1100376767258298184}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.88805974
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1102 &8699870883113751347
+  m_DefaultState: {fileID: -843411186740395655}
+--- !u!1102 &9062490279921442953
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Stand To Sit
-  m_Speed: 1
+  m_Name: Salsa Dancing
+  m_Speed: 0.75
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 6194944041003473491}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -116,7 +93,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a50982a9e0a05ac4cbf6054512e2152e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8386c8e20f2af3f4b8eae24307c5138a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

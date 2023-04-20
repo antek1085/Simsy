@@ -13,20 +13,20 @@ public class movement : MonoBehaviour
     public float fun = 100f;
     public float hygiene = 100f;
 
-    [SerializeField] float hungerLoss = 0.5f;
-    [SerializeField] float sleepLoss = 0.5f;
+    [SerializeField] float hungerLoss = 0.6f;
+    [SerializeField] float sleepLoss = 0.2f;
     [SerializeField] float funLoss = 0.5f;
-    [SerializeField] float hygieneLoss = 0.5f;
+    [SerializeField] float hygieneLoss = 0.4f;
 
     private float hungerLossStop = 0.001f;
     private float funLossStop = 0.001f;
     private float energyLossStop = 0.001f;
     private float hygieneLossStop = 0.001f;
 
-    private float hungerLossDefault = 0.4f;
-    private float funLossDefault = 0.2f;
-    private float energyLossDefault = 0.5f;
-    private float hygieneLossDefault = 0.5f;
+    private float hungerLossDefault = 0.6f;
+    private float funLossDefault = 0.5f;
+    private float energyLossDefault = 0.2f;
+    private float hygieneLossDefault = 0.4f;
 
     [SerializeField] private float minHunger = 70f;
     [SerializeField] private float minSleep = 70f;
@@ -39,6 +39,7 @@ public class movement : MonoBehaviour
     public TextMeshProUGUI sleep_Text_Hud;
     public TextMeshProUGUI fun_Text_Hud;
     public TextMeshProUGUI hygiene_Text_Hud;
+    public TextMeshProUGUI dead;
     
     [Header("Targets")]
     
@@ -47,6 +48,7 @@ public class movement : MonoBehaviour
     public GameObject tarSleep;
     public GameObject tarFun;
     public GameObject tarHygiene;
+    public Transform lookAtSleep;
     public float idleDistance = 1f;
     
     [Header("Animator Controllers")]
@@ -66,6 +68,7 @@ public class movement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        dead.enabled = false;
 
     }
 
@@ -95,9 +98,13 @@ public class movement : MonoBehaviour
         {
             HygieneAnim();
         }
-        
 
+        if (hunger == 0)
+        {
+            Destroy(gameObject);
+            dead.enabled = true;
 
+        }
     }
 
     void Loss()
@@ -176,7 +183,7 @@ public class movement : MonoBehaviour
             funLoss = funLossStop;
             sleepLoss = energyLossStop;
             hygieneLoss = hygieneLossStop;
-            Invoke("HungerAdd", 20f);
+            Invoke("HungerAdd", 10f);
         }
     }
     void SleepAnim()
@@ -189,12 +196,13 @@ public class movement : MonoBehaviour
         }
         else
         {
+            transform.LookAt(lookAtSleep, Vector3.up);
             animator.runtimeAnimatorController = animSleep as RuntimeAnimatorController; //animation that will add Hunger
             hungerLoss = hungerLossStop;
             funLoss = funLossStop;
             sleepLoss = energyLossStop;
             hygieneLoss = hygieneLossStop;
-            Invoke("SleepAdd", 20f);
+            Invoke("SleepAdd", 15f);
         }
     }
     void FunAnim()
@@ -212,7 +220,7 @@ public class movement : MonoBehaviour
             funLoss = funLossStop;
             sleepLoss = energyLossStop;
             hygieneLoss = hygieneLossStop;
-            Invoke("FunAdd", 20f);
+            Invoke("FunAdd", 8f);
         }
     }
     void HygieneAnim()
@@ -230,7 +238,7 @@ public class movement : MonoBehaviour
             funLoss = funLossStop;
             sleepLoss = energyLossStop;
             hygieneLoss = hygieneLossStop;
-            Invoke("HygieneAdd", 20f);
+            Invoke("HygieneAdd", 9f);
         }
     }
 }
